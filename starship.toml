@@ -1,0 +1,114 @@
+# The new prompt
+format = """
+[ $username ───── ](bold #bc9274)$directory$git_branch$python$rust$lua$cmd_duration | $time
+[ ](bold #bc9274)$character"""
+
+
+
+# Break the new line at the start of the prompt
+[line_break]
+disabled = false
+
+
+# The symbol of a succesful command and an error command 
+[character]
+#success_symbol = "[ ](bold #DD9B7B)"
+#error_symbol = "[ ](#DB425B) "
+success_symbol = "[\\$](bold #bc9274)"
+error_symbol = "[X](bold #DB425B) "
+
+# Truncate the path of the directory to only the basename
+[directory]
+style = " bold #7bdef1"
+truncation_length = 2
+
+# Show the username and divide the directory with a pipe symbol
+[username]
+style_user = "bold #bc9274"
+show_always = true
+style_root = "bold #E37534"
+#format = "[$user|]($style) - "
+format = "[$user]($style)"
+
+# Show command duration above 500 ms
+[cmd_duration]
+min_time = 500
+style = "bold #98DEDE"
+format = "[       - $duration]($style)"
+show_milliseconds = false
+
+# Show the time in the command prompt
+[time]
+time_format = "%H:%M"
+#format = " $time($style) "
+format = " $time($style) "
+style = "bright-white"
+disabled = false
+
+# Everything to do with the display of battery
+[battery]
+format = "[$symbol]($style)$percentage  |  "
+
+# Order of threshold here matters! from low to high
+[[battery.display]]
+threshold = 20
+discharging_symbol = "  CHARGE YOUR LAPTOP "
+charging_symbol = "  "
+style = "#FA1400"
+
+[[battery.display]]
+threshold = 40
+discharging_symbol = "  "
+charging_symbol = "  "
+style = "#FAAF28"
+
+[[battery.display]]
+threshold = 60
+discharging_symbol = "  "
+charging_symbol = "  "
+style = "#F8D50C"
+
+[[battery.display]]
+threshold = 85
+discharging_symbol = "  "
+charging_symbol = "  "
+style = "#CCE019"
+
+[[battery.display]]
+threshold = 100
+charging_symbol = "  "
+discharging_symbol = "  "
+style = "#CCE019"
+
+# Shows memory when threshold of 60% is in use
+[memory_usage]
+disabled = false
+threshold = 60
+format = "- $symbol[${ram}]($style) "
+
+# Configures the python prompt
+[python]
+symbol = " "
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+# Configures the rust prompt
+[rust]
+format = "[ ${symbol}(${version} )]($style)"
+style = "#fa6e79"
+
+# Configures the rust prompt
+[lua]
+format = "[ $symbol]($style)"
+symbol = " lua"
+
+# Configures the github prompt
+[git_branch]
+symbol = " "
+style = "#A779FF"
+format = "[ $symbol$branch]($style) "
+
+[git_status]
+disabled = true
+
+
+
