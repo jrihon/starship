@@ -1,7 +1,7 @@
 # The new prompt
 format = """
-[ $username ───── ](bold #bc9274)$directory$git_branch$python$rust$lua$cmd_duration | $time
-[ ](bold #bc9274)$character"""
+[ $username ───── ](bold #9d7cb8)$directory$git_branch$rust$python$lua$cmd_duration $time
+[ ](bold #9d7cb8)$character"""
 
 
 
@@ -14,36 +14,36 @@ disabled = false
 [character]
 #success_symbol = "[ ](bold #DD9B7B)"
 #error_symbol = "[ ](#DB425B) "
-success_symbol = "[\\$](bold #bc9274)"
+success_symbol = "[\\$](bold #9d7cb8)"
 error_symbol = "[X](bold #DB425B) "
 
 # Truncate the path of the directory to only the basename
 [directory]
-style = " bold #7bdef1"
+style = " bold #82aaff"
 truncation_length = 2
 
 # Show the username and divide the directory with a pipe symbol
 [username]
-style_user = "bold #bc9274"
+style_user = "bold #9d7cb8"
 show_always = true
 style_root = "bold #E37534"
 #format = "[$user|]($style) - "
 format = "[$user]($style)"
 
-# Show command duration above 500 ms
+# Show command duration above 1 minute
 [cmd_duration]
-min_time = 500
-style = "bold #98DEDE"
-format = "[       - $duration]($style)"
+min_time = 60000
+style = "bold #4fd6be"
+#format = "[       - $duration]($style)"
+format = "[ - $duration]($style)"
 show_milliseconds = false
 
 # Show the time in the command prompt
 [time]
-time_format = "%H:%M"
-#format = " $time($style) "
-format = " $time($style) "
-style = "bright-white"
 disabled = false
+time_format = "| %R"
+style = "#545c7e"
+format = "[$time]($style) "
 
 # Everything to do with the display of battery
 [battery]
