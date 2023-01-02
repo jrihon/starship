@@ -39,13 +39,14 @@ disabled = true
 
 # Show the time in the command prompt
 [time]
-time_format = "%H:%M"
-format = "  $time ($style) "
-style = "bright-white"
 disabled = false
+time_format = "| %R"
+style = "#545c7e"
+format = "[$time]($style) "
 
 [cmd_duration]
-min_time = 500
-style = "bold #98DEDE"
-format = "[   - $duration  ]($style)"
+min_time = 1000
+style = "bold #545c7e"
+#format = "[       - $duration]($style)"
+format = "[ - $duration]($style)"
 show_milliseconds = false
