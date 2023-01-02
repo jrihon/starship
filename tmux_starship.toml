@@ -40,7 +40,7 @@ disabled = true
 # Show the time in the command prompt
 [time]
 disabled = false
-time_format = "| %R"
+time_format = "%R"
 style = "#545c7e"
 format = "[$time]($style) "
 
