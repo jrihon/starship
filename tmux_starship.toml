@@ -1,5 +1,5 @@
 # The new prompt
-format = """ $character$time$directory$git_branch$python$cmd_duration """
+format = """ $character$time$directory$git_branch$rust$python$cmd_duration """
 # right align is only configurable on zsh and fish
 add_newline = false
 
@@ -23,20 +23,6 @@ style = " bold #7bdef1"
 truncation_length = 2
 
 
-# Configures the python prompt
-[python]
-symbol = " "
-format = '[- ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-
-# Configures the github prompt
-[git_branch]
-symbol = " "
-style = "#A779FF"
-format = "[| $symbol$branch]($style) "
-
-[git_status]
-disabled = true
-
 # Show the time in the command prompt
 [time]
 disabled = false
@@ -50,3 +36,27 @@ style = "bold #545c7e"
 #format = "[       - $duration]($style)"
 format = "[ - $duration]($style)"
 show_milliseconds = false
+
+# Configures the python prompt
+[python]
+symbol = " "
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+# Configures the rust prompt
+[rust]
+format = "[ ${symbol}(${version} )]($style)"
+style = "#fa6e79"
+
+# Configures the rust prompt
+[lua]
+format = "[ $symbol]($style)"
+symbol = " lua"
+
+# Configures the github prompt
+[git_branch]
+symbol = " "
+style = "#A779FF"
+format = "[ $symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+disabled = true
