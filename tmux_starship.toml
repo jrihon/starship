@@ -1,5 +1,5 @@
 # The new prompt
-format = """ $character$time$directory$git_branch$rust$python$cmd_duration """
+format = """ $character$time$directory$git_branch$rust$python$conda$cmd_duration """
 # right align is only configurable on zsh and fish
 add_newline = false
 
@@ -47,10 +47,16 @@ format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 format = "[ ${symbol}(${version} )]($style)"
 style = "#fa6e79"
 
-# Configures the rust prompt
+# Configures the lua prompt
 [lua]
 format = "[ $symbol]($style)"
 symbol = " lua"
+
+# Configures the conda prompt
+[conda]
+truncation_length = 0
+style = "bold #1B9858"
+format = ' [$symbol$environment]($style) '
 
 # Configures the github prompt
 [git_branch]
